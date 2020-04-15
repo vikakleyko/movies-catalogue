@@ -12,10 +12,11 @@ class MovieTabs extends React.Component {
 
   render() {
     // console.log("tabs render");
-    const { sort_by, updateSortBy } = this.props;
+    const { sort_by, updateSortBy, updatePage } = this.props;
 
     const handleClick = (value) => () => {
       updateSortBy(value);
+      updatePage(1);
     };
 
     const getClassName = (value) => {

@@ -87,7 +87,7 @@ class App extends React.Component {
           <div className="col-9">
             <div className="row mb-4">
               <div className="col-12">
-                  <MovieTabs sort_by={this.state.sort_by} updateSortBy={this.updateSortBy}/>
+                  <MovieTabs sort_by={this.state.sort_by} updateSortBy={this.updateSortBy} updatePage={this.updatePage}/>
               </div>
             </div>
             <div className="row">
