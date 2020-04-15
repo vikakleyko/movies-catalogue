@@ -1,19 +1,28 @@
 import React from "react";
 
 class Pagination extends React.Component {
+  createElements = (n) => {
+    var elements = [];
+    for (let i = 0; i < n; i++) {
+      elements.push(<li>{i}</li>);
+    }
+    return elements;
+  };
+
   render() {
-    const {page, updatePage} = this.props;
+    const { page, updatePage } = this.props;
+    let arr =  Array.from({length:10},(v,k)=>k+1);
+    
+    const changePage = (p) => () => {
+      if (p >= 1 && p <= 10) {
+        updatePage(p);
+      }
+      console.log(p);
+    };
 
-    const changePage = p => () => {
-        if(p >= 1 && p <=3) {
-            updatePage(p);
-        }
-        console.log(p);
-    }
-
-    const getClassName = p => {
-        return `page-item ${page === p ? "active" : ""}`
-    }
+    const getClassName = (p) => {
+      return `page-item ${page === p ? "active" : ""}`;
+    };
 
     return (
       <div>
@@ -23,21 +32,17 @@ class Pagination extends React.Component {
               Previous
             </a>
           </li>
-          <li className={getClassName(1)} onClick={changePage(1)}>
-            <a className="page-link" href="#">
-              1
-            </a>
-          </li>
-          <li className={getClassName(2)} onClick={changePage(2)}>
-            <a className="page-link" href="#">
-              2
-            </a>
-          </li>
-          <li className={getClassName(3)} onClick={changePage(3)}>
-            <a className="page-link" href="#">
-              3
-            </a>
-          </li>
+
+          {arr.map((item) => {
+            return (
+              <li key={item} className={getClassName(item)} onClick={changePage(item)}>
+                <a className="page-link" href="#">
+                  {item}
+                </a>
+              </li>
+            );
+          })}
+
           <li className="page-item" onClick={changePage(page + 1)}>
             <a className="page-link" href="#">
               Next

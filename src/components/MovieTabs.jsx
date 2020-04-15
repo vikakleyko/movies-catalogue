@@ -2,7 +2,7 @@ import React from "react";
 
 class MovieTabs extends React.Component {
   shouldComponentUpdate(nextProps, nextState) {
-    // console.log("tabs should component update");
+    //console.log("tabs should component update");
     if (nextProps.sort_by !== this.props.sort_by) {
       return true;
     } else {
