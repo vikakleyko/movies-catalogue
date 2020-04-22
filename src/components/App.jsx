@@ -3,6 +3,7 @@ import MovieItem from "./MovieItem";
 import {API_URL as url, API_KEY_3 as key} from '../Api.js'
 import MovieTabs from "./MovieTabs";
 import Pagination from "./Pagination";
+import '../App.css';
 
 class App extends React.Component {
   constructor() {
@@ -83,17 +84,17 @@ class App extends React.Component {
     // console.log("app render");
     return (
       <div className="container">
-        <div className="row">
-          <div className="col-9">
-            <div className="row mb-4">
-              <div className="col-12">
+        <div>
+          <div className="movies-list">
+            <div  className="tabs">
+              <div className="movie-tabs">
                   <MovieTabs sort_by={this.state.sort_by} updateSortBy={this.updateSortBy} updatePage={this.updatePage}/>
               </div>
             </div>
-            <div className="row">
+            <div className="movies-items">
               {this.state.movies.map((movie) => {
                 return (
-                  <div className="col-6 mb-4" key={movie.id}>
+                  <div className="movie-item" key={movie.id}>
                     <MovieItem
                     movie={movie}
                     removeMovie={this.removeMovie}
@@ -105,7 +106,7 @@ class App extends React.Component {
               })}
             </div>
           </div>
-          <div className="col-3">
+          <div className="movies-to-watch">
             <p>Will watch: {this.state.willWatch.length}</p>
           </div>
           <Pagination page={this.state.page} updatePage={this.updatePage}/>

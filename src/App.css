@@ -1,4 +1,18 @@
 
-@media only screen and (max-width: 768px) {
-  
+.card{
+    width: 300px;
+}
+.movies-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tabs{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.movie-item{
+    width: 340px;
+    height: 340px;
 }
