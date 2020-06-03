@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Description
+
+Movie catalog with search function
+
 ## Link 
 
 https://vikakleyko.github.io/movies-catalogue
