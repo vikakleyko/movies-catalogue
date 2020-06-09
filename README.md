@@ -8,7 +8,7 @@ Movie catalog with search function
 
 https://vikakleyko.github.io/movies-catalogue
 
-Published with GraphQl
+Built and published with GraphQl
 
 ## Available Scripts
 
