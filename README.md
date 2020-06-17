@@ -1,14 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Description
+## Description
 
-Movie catalog with search function
+Movie catalog with search function built using React
 
 ## Link 
 
 https://vikakleyko.github.io/movies-catalogue
 
-Built and published with GraphQl
+Published with GraphQl
 
 ## Available Scripts
 
